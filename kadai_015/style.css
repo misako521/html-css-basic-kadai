@@ -1,0 +1,39 @@
+/* Googleフォント読み込み */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+/* フォントサイズ（ルート） */
+html {
+  font-size: 20px;
+}
+
+/* 全体のフォントと中央寄せ */
+body {
+  font-family: "Arial", "Meiryo", sans-serif;
+  text-align: center;
+}
+
+/* h1 の装飾 */
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1.2rem; /* ← 2rem × 1.2 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid rgb(115, 115, 114);
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* 色指定用のクラス（MY PROFILE の M / P と各見出し用） */
+.blue {
+  color: skyblue;
+}
+
+.pink {
+  color: rgb(255, 192, 203);
+}
+
+/* basic 内の特定テキストだけ太字にする */
+#basic p span {
+  font-weight: bold;
+}
