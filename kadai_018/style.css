@@ -1,0 +1,74 @@
+#top {
+  width: 800px;               /* 横幅 */
+  background-color: #dcc9f4;  /* 背景色 */
+  margin: 20px auto;          /* 上下20px、左右中央寄せ */
+  text-align: center;         /* 中の p を中央揃え */
+  padding: 20px 0;            /* 上下に余白（見栄え改善） */
+}
+.top-child {
+  width: 20%;                 /* 親の20% */
+  background-color: #ffd9df;  /* 背景色 */
+  display: inline-block;      /* 横並びにする */
+}
+/* 親要素 middle の装飾 ← # を付ける！ */
+#middle {
+  width: 800px;
+  height: 800px;
+  margin: 20px auto;         /* 上下20px、左右中央 */
+  background-color: #ffd9df;
+  position: relative;        /* 子要素 absolute の基準にする */
+}
+
+/* 子要素3つ共通 */
+#middle-child01,
+#middle-child02,
+#middle-child03 {
+  width: 200px;
+  height: 200px;
+  background-color: #87ceeb;
+  position: absolute;
+}
+
+/* それぞれの位置 */
+#middle-child01 {
+  top: 100px;
+  left: 100px;
+}
+
+#middle-child02 {
+  top: 300px;
+  left: 300px;
+}
+
+#middle-child03 {
+  top: 500px;
+  left: 500px;
+}
+#bottom {
+  width: 800px;
+  height: 300px;
+  margin: 20px auto;          /* 中央配置 */
+  background-color: #87ceeb;  /* 水色 */
+          /* 子要素absoluteの基準にする */
+}
+
+/* 子要素3つの共通装飾 */
+#bottom-child01,
+#bottom-child02,
+#bottom-child03 {
+  width: 400px;
+  height: 100px;
+  position: relative;
+  background-color: #e5dcf0;  /* 薄い紫 */
+                /* 3つとも縦位置は共通（中央あたり） */
+}
+#bottom-child01 {
+  left: 0;       /* 本来の場所 */
+}
+#bottom-child02 {
+  left: 200px;   /* 左から200pxずらす */
+}
+
+#bottom-child03 {
+  left: 400px;   /* 左から400pxずらす */
+}
