@@ -1,0 +1,109 @@
+body, h1, p {
+  margin: 0;            /* 上下左右のmarginを0 */
+}
+
+p,
+a {
+  font-size: 20px;      /* 記事内すべてのpとaを20pxに */
+}
+header {
+  margin-bottom: 20px;                 /* 下の余白20px */
+  background-color: rgb(244, 79, 79);  /* 背景色 */
+  text-align: center;                  /* 中の要素を中央揃え */
+}
+
+header h1 {
+  color: rgb(255, 255, 255);           /* 文字色を白に */
+}
+
+/* Step5: main部分全体 */
+main {
+  padding: 10px;                       /* main要素の内側余白（上下左右10px） */
+}
+
+/* id="parent" をFlexコンテナにする */
+#parent {
+  display: flex;                       /* Flexコンテナ */
+  justify-content: space-around;       /* 両端も含めて均等な間隔で配置 */
+  flex-wrap: wrap;                     /* 狭い画面で折り返したい場合はおまけで */
+}
+
+/* class="contents" のBOX */
+.contents {
+  border: 3px solid rgb(238, 204, 204);  /* 枠線 */
+  flex-basis: 25%;                       /* 親要素の幅の25% */
+  padding: 10px 15px;                    /* 上下10px 左右15px */
+  margin: 20px 0;                        /* 上下20px 左右0 */
+  text-align: center;                    /* 中の要素を中央揃え */
+}
+
+/* 画像が大きすぎる場合に備えて（任意だけどおすすめ） */
+.contents img {
+   margin: 10px 0;        /* 上下10px 左右0 */
+  width: 70%;            /* 幅70% */
+  height: auto; 
+}
+
+/* h2の装飾 */
+.contents h2 {
+  font-size: 25px;                           /* フォントサイズ25px */
+  border-bottom: 3px dotted rgb(236, 122, 122);  /* 下線（点線） */
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* h2の前に「●」を表示 */
+.contents h2::before {
+  content: "●";
+  color: rgb(239, 111, 139);
+  margin-right: 5px;
+}
+
+/* class="contents" 内の二番目のp要素の１文字目だけ装飾 */
+.contents p:nth-of-type(2)::first-letter {
+  font-weight: bold;                 /* 太字 */
+  color: rgb(97, 206, 249);          /* 文字色 */
+}
+footer {
+  background-color: rgb(244, 79, 79);  /* 背景色 */
+  text-align: center;                  /* 中央揃え */
+  padding: 10px 0;                     /* 少し余白を追加（任意だけど見やすい） */
+}
+
+/* フッター内のリンク */
+footer a:link {
+  color: rgb(255, 255, 255);           /* 通常のリンクの色 */
+  text-decoration: none;
+}
+
+footer a:visited {
+  color: rgb(193, 234, 251);           /* 訪問済みリンク */
+}
+
+footer a:hover {
+  color: rgb(245, 178, 168);           /* ホバー時 */
+}
+
+/* Step7 レスポンシブ対応（画面幅768px以下）*/
+@media screen and (max-width: 768px) {
+  /* h2のフォントサイズを30pxに */
+  h2 {
+    font-size: 30px;
+  }
+
+  /* pのフォントサイズを25pxに */
+  p {
+    font-size: 25px;
+  }
+
+  /* parent内の要素を縦並びに */
+  #parent {
+    flex-direction: column;   /* 縦並び */
+    align-items: center;      /* 中央に寄せる（任意だけどキレイ） */
+  }
+
+  /* 縦並びのとき幅が狭すぎないよう調整（おまけ） */
+  .contents {
+    flex-basis: 80%;
+  }
+}
